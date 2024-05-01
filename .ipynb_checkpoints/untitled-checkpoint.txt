@@ -1,0 +1,31 @@
+Docs Links
+
+
+https://docs.ray.io/en/latest/train/user-guides/using-gpus.html
+
+
+https://docs.ray.io/en/latest/cluster/configure-manage-dashboard.html#dashboard-in-browser
+
+# Solve issue
+# Uninstall pydantic
+# Install ray (pip install -U "ray[all]")
+# ray start --include-dashboard=True --dashboard-port=5000 --dashboard-host=0.0.0.0 --head
+
+
+#Grafana and prometheus
+
+export RAY_GRAFANA_HOST=http://172.16.68.35:2005 #Need to setup external port
+export RAY_PROMETHEUS_HOST=http://127.0.0.1:9090
+
+ray metrics launch-prometheus
+ray start --head --metrics-export-port=8080 #Setting port
+
+Use binary version
+do this in workspace grafana folder
+./bin/grafana server # Launch grafana server
+
+
+Model:
+vit-pytorch
+linformer
+catboost
